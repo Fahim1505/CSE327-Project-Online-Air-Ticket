@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cea56aa947.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="side_container">
+            <h2>Welcome to Air Ticket Booking</h2>
+            <div class="image">
+                <img src="Blank_Image.png" alt="image">
+            </div>
+
+            <ul>
+                <li><a href="#" onclick="showHomePage()"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="#" onclick="showPage('schedule')"><i class="fa-regular fa-clock time-icon"></i> Schedule</a></li>
+                <li><a href="#" onclick="showPage('booking')"><i class="fa-solid fa-calendar-check"></i> Booking</a></li>
+                <li><a href="#" onclick="showPage('cancelBooking')"><i class="fa-solid fa-xmark"></i> Cancel Booking</a></li>
+                <li><a href="#" onclick="showPage('view')"><i class="fa-solid fa-eye"></i> View</a></li>
+                <li><a href="#" onclick="showPage('flight')"><i class="fa-solid fa-plane"></i> Flight</a></li> 
+                <li><a href="#" onclick="showPage('changeFlight')"><i class="fa-solid fa-plane"></i> Change Flight</a></li>
+                <li><a href="#" onclick="showPage('deleteFlight')"><i class="fa-solid fa-trash"></i> Delete Flight</a></li>
+            </ul>
+
+            <div class="social_media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="main_content">
+            <div class="header">
+                <div class="search_container">
+                    <form method="post" action="">
+                        <input type="search" placeholder="Search..." name="">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="logout_container">
+                    <a href="#"><span class="logout">Logout</span></a>
+                </div>
+            </div>
+
+            <!-- Homepage Content -->
+            <div id="homePage" class="inner_container">
+                <h3>Welcome to the Air Ticket Booking System</h3>
+                <p>If you don't have an account, <a href="#" onclick="showCreateAccount()">Click here to create an account</a>.</p>
+            </div>
+
+            <!-- Account Creation Form -->
+            <div id="createAccountPage" class="inner_container" style="display: none;">
+                <h3>Create Account</h3>
+                <form action="create_account.php" method="POST">
+                    <div class="user-input-box">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required/>
+                    </div>
+
+                    <div class="user-input-box">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required/>
+                    </div>
+
+                    <div class="user-input-box">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required/>
+                    </div>
+
+                    <div class="user-input-box">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <input type="password" id="confirmpassword" name="confirmpassword" required/>
+                    </div>
+
+                    <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 20px;">Create Account</button>
+                </form>
+                <!-- Back to Home Button -->
+                <button onclick="showHomePage()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // Function to show the Home Page
+        function showHomePage() {
+            document.getElementById("homePage").style.display = "block";
+            document.getElementById("createAccountPage").style.display = "none";
+        }
+
+        // Function to show Create Account Page
+        function showCreateAccount() {
+            document.getElementById("homePage").style.display = "none";
+            document.getElementById("createAccountPage").style.display = "block";
+        }
+
+        // Function to show different pages like Booking, Schedule etc.
+        function showPage(page) {
+            alert("This page is under construction: " + page);
+        }
+
+        // Initial load: Show Home Page
+        showHomePage();
+    </script>
+
+</body>
+</html>
+
+
+

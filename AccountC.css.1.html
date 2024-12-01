@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="booking.css">
+    <script src="https://kit.fontawesome.com/cea56aa947.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="side_container">
+            <h2>Air Ticket Booking</h2>
+           
+            </div>
+            
+            
+
+            <div class="inner_container">
+                <h3>Create Account</h3>
+                <form action="account_create.php" method="POST">
+                    <table>
+                        <!-- Full Name Input -->
+                        <div class="user-input-box">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" required />
+                        </div>
+
+                        <!-- Email Input -->
+                        <div class="user-input-box">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+
+                        <!-- Password Input -->
+                        <div class="user-input-box">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required />
+                        </div>
+
+                        <!-- Confirm Password Input -->
+                        <div class="user-input-box">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" id="confirmpassword" name="confirmpassword" required />
+                        </div>
+
+                        <!-- Phone Number Input -->
+                        <div class="user-input-box">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" name="phone" required />
+                        </div>
+
+                        <!-- Address Input -->
+                        <div class="user-input-box">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" required></textarea>
+                        </div>
+
+                        <!-- Gender Selection -->
+                        <div class="user-input-box">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="select">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="user-input-box">
+                            <input type="checkbox" id="terms" name="terms" required />
+                            <label for="terms">I agree to the terms and conditions</label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <tr>
+                            <td><button class="btn btn-success" name="create_account" style="display: block; width: 100%; position: relative; left: 370px; margin-top: 90px; font-size: 16px; padding: 10px; border:none; cursor: pointer; border-radius: 5px; color: rgb(238, 238, 238); background: rgba(22, 62, 222, 0.7);">Create Account</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div> 
+        </div> 
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
