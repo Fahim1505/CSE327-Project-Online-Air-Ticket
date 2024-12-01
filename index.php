@@ -1,141 +1,79 @@
+<?php
+            if (isset($_GET['message'])) {
+                echo "<p style='color: green;'>" . htmlspecialchars($_GET['message']) . "</p>";
+            }
+            ?>
 <!DOCTYPE html>
 <html lang="en">
+<!--Checked 25/11/2024-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Booking System</title>
+    <title>Air Ticket Booking</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Flight Booking System</h1>
-    </header>
+    <header>
+        <nav>
+            <div class="logo"><a href="#">Air Ticket</a></div>
+            <ul class="nav-links"> <!--Naviation link-->
 
-    <main class="container">
-        <section class="booking-form">
-            <h2>Book Your Flight</h2>
-            <form>
-                <div class="form-group">
-                    <label for="from">From</label>
-                    <input type="text" id="from" placeholder="City or Airport">
-                </div>
-                <div class="form-group">
-                    <label for="to">To</label>
-                    <input type="text" id="to" placeholder="City or Airport">
-                </div>
-                <div class="form-group">
-                    <label for="departure-date">Departure Date</label>
-                    <input type="date" id="departure-date">
-                </div>
-                <div class="form-group">
-                    <label for="return-date">Return Date</label>
-                    <input type="date" id="return-date">
-                </div>
-                <div class="form-group">
-                    <label for="passengers">Passengers</label>
-                    <select id="passengers">
-                        <option value="1">1 Passenger</option>
-                        <option value="2">2 Passengers</option>
-                        <option value="3">3 Passengers</option>
-                        <option value="4">4 Passengers</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn">Search Flights</button>
-            </form>
-        </section>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Registration.php">Registration</a></li>
+                <li><a href="login.php">Log In</a></li>
+                <li><a href="adminlogin.html">Admin LogIn</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Community of Airport</h1>
+            <p>Booking Air Ticket Online And Enjoy Your Journey</p>
 
-        <section class="flight-results">
-            <h2>Available Flights</h2>
-            <!-- Flight 1 -->
-            <div class="flight-card">
-                <div class="flight-header">
-                    <span class="flight-name">Airline 1</span>
-                    <span class="flight-time">10:00 AM</span>
-                </div>
-                <div class="flight-details">
-                    <p><strong>From:</strong> New York (JFK)</p>
-                    <p><strong>To:</strong> London (LHR)</p>
-                    <p><strong>Price:</strong> $450</p>
-                    <p><strong>Duration:</strong> 7h 45m</p>
-                    <button class="btn-book" onclick="openBookingModal('Airline 1', 'New York', 'London', '$450', '7h 45m')">Book Now</button>
-                </div>
-            </div>
-
-            <!-- Flight 2 -->
-            <div class="flight-card">
-                <div class="flight-header">
-                    <span class="flight-name">Airline 2</span>
-                    <span class="flight-time">12:00 PM</span>
-                </div>
-                <div class="flight-details">
-                    <p><strong>From:</strong> Los Angeles (LAX)</p>
-                    <p><strong>To:</strong> Tokyo (NRT)</p>
-                    <p><strong>Price:</strong> $850</p>
-                    <p><strong>Duration:</strong> 10h 30m</p>
-                    <button class="btn-book" onclick="openBookingModal('Airline 2', 'Los Angeles', 'Tokyo', '$850', '10h 30m')">Book Now</button>
-                </div>
-            </div>
-
-            <!-- Flight 3 -->
-            <div class="flight-card">
-                <div class="flight-header">
-                    <span class="flight-name">Airline 3</span>
-                    <span class="flight-time">2:00 PM</span>
-                </div>
-                <div class="flight-details">
-                    <p><strong>From:</strong> Paris (CDG)</p>
-                    <p><strong>To:</strong> Dubai (DXB)</p>
-                    <p><strong>Price:</strong> $650</p>
-                    <p><strong>Duration:</strong> 6h 15m</p>
-                    <button class="btn-book" onclick="openBookingModal('Airline 3', 'Paris', 'Dubai', '$650', '6h 15m')">Book Now</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2024 Flight Booking System. All rights reserved.</p>
-    </footer>
-
-    <!-- Book Now Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeBookingModal()">&times;</span>
-            <h2>Flight Booking</h2>
-            <form id="bookingForm">
-                <div class="form-group">
-                    <label for="flight-name">Airline</label>
-                    <input type="text" id="flight-name" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="from-city">From</label>
-                    <input type="text" id="from-city" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="to-city">To</label>
-                    <input type="text" id="to-city" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="text" id="price" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="duration">Duration</label>
-                    <input type="text" id="duration" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="passenger-name">Passenger Name</label>
-                    <input type="text" id="passenger-name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="contact">Contact</label>
-                    <input type="text" id="contact" placeholder="Enter your contact" required>
-                </div>
-                <button type="submit" class="btn">Confirm Booking</button>
-            </form>
         </div>
-    </div>
-
-    <script src="script.js"></script>
+    </header>
+    <main>
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3><a href="">Booking Ticket</a></h3> <!-- Link added here --> 
+                    
+                    <p>Easily you can book your desire locations ticket.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-xmark"></i>
+                    <h3>Cancel Booking</h3>
+                    <p>You will have limited time access for cancel the booking.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-regular fa-clock time-icon"></i>
+                    <h3>Schedule</h3>
+                    <p>Everyone can see the timing of the flights.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>View Flights</h3>
+                    <p>Everyone can view the available flights.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-list"></i>
+                    <h3>List of Current Booking</h3>
+                    <p>List of the passengers who booked the tickets.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-trash"></i>
+                    <h3>Delete Flights</h3>
+                    <p>Only admin can delete the flights if they are unavailable.</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy;  2024 Online Air Ticket Booking System. All rights reserved.   </p>
+    </footer>
 </body>
 </html>
