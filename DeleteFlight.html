@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <!-- Link to external CSS stylesheet for styling -->
     <link rel="stylesheet" href="HomePage.css">
+    <!-- Font Awesome icons for various UI elements -->
     <script src="https://kit.fontawesome.com/cea56aa947.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
 
-
+    <!-- Wrapper div to hold the page layout -->
     <div class="wrapper">
+        <!-- Side container for the sidebar navigation -->
         <div class="side_container">
+            <!-- Section for the Air Ticket Booking title -->
             <h2>Air Ticket Booking</h2>
+            <!-- Section for displaying an image -->
             <div class="image">
                 <img src="Blank_Image.png" alt="image">
             </div>
-            
+
+            <!-- Sidebar menu with links to different pages in the system -->
             <ul>
-                <li><a href="Dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="Dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
                 <li><a href="Schedule.html"><i class="fa-regular fa-clock time-icon"></i> Schedule</a></li>
                 <li><a href="Booking.html"><i class="fa-solid fa-calendar-check"></i> Booking</a></li>
                 <li><a href="CancelBooking.html"><i class="fa-solid fa-xmark"></i> Cancel Booking</a></li>
@@ -27,8 +33,9 @@
                 <li><a href="ViewFlight.html"><i class="fa-solid fa-plane"></i> Flight</a></li> 
                 <li><a href="ChangeFlight.html"><i class="fa-solid fa-plane"></i> Change Flight</a></li>
                 <li><a href="DeleteFlight.html"><i class="fa-solid fa-trash"></i> Delete Flight</a></li>
-
             </ul> 
+            
+            <!-- Social media links -->
             <div class="social_media">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -36,8 +43,10 @@
             </div>
         </div>
 
+        <!-- Main content section -->
         <div class="main_content">
             <div class="header">
+                <!-- Search bar section -->
                 <div class="search_container">
                     <form method="post" action="">
                         <input type="search" placeholder="Search..." name="">
@@ -45,22 +54,29 @@
                     </form>
                 </div>
 
+                <!-- Logout button section -->
                 <div class="logout_container">
                     <a href="#"><span class="logout">Logout</span></a>
                 </div>
             </div> 
-            </div> 
         </div>
+
+        <!-- Section for flight deletion -->
         <div class="delete">
+            <!-- Form for deleting a flight by entering its number -->
             <form action="deleteflight.php">
-            <p><label for="DeleteFlight">Deletion of Flight:</label></p>
-            <textarea placeholder="Enter Flight Number"  rows="2" cols="20"></textarea>
-            <br>
-            <input type="submit" value="Delete">
-          </form>
+                <p><label for="DeleteFlight">Deletion of Flight:</label></p>
+                <!-- Text area for entering the flight number -->
+                <textarea placeholder="Enter Flight Number" rows="2" cols="20"></textarea>
+                <br>
+                <!-- Submit button to submit the form -->
+                <input type="submit" value="Delete">
+            </form>
         </div>
         
     </div>
+
+    <!-- Ionicons script for adding icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
