@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
+    <title>Create Flight</title>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="createflight.css">
+    <script src="https://kit.fontawesome.com/cea56aa947.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Main wrapper that holds the entire layout -->
+    <div class="wrapper">
+        <!-- Sidebar container -->
+        <div class="side_container">
+            <h2>Air Ticket Booking</h2>
+            <!-- Placeholder image inside the sidebar -->
+            <div class="image">
+                <img src="Blank_Image.png" alt="image">
+            </div>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="Dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="CreateFlight.html"><i class="fa-solid fa-plane"></i>Create Flight</a></li> 
+                <li><a href="View.html"><i class="fa-solid fa-eye"></i> View</a></li> 
+                <li><a href="ChangeFlight.html"><i class="fa-solid fa-plane"></i> Change Flight</a></li>
+                <li><a href="DeleteFlight.html"><i class="fa-solid fa-trash"></i> Delete Flight</a></li>
+
+            </ul> 
+            <!-- Social media links -->
+            <div class="social_media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="main_content">
+            <div class="header">
+                <div class="search_container">
+                    <form method="post" action="">
+                        <input type="search" placeholder="Search..." name="">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            <!-- Logout link -->
+                <div class="logout_container">
+                    <a href="#"><span class="logout">Logout</span></a>
+                </div>
+            </div> 
+
+            <div class="inner_container">
+                <form action="CreateFlight1.php" method="POST">
+
+            <table>
+                
+                <div class="user-input-box">
+                    <label for="flightno">Flight Number</label>
+                <input type="text"
+                        id="flightno"
+                        name="flightno"
+                        required/>
+              </div>
+              <div class="user-input-box">
+                <label for="dep">Departure</label>
+            <input type="text"
+                    name="dep"
+                    required/>
+          </div>
+          <div class="user-input-box">
+            <label for="des">Destination</label>
+        <input type="text"
+                name="des"
+                required/>
+      </div>
+      <div class="user-input-box">
+        <label for="date">Date</label>
+    <input type="date"
+            name="date"
+            required/>
+  </div>
+  <div class="user-input-box">
+    <label for="time">Time</label>
+<input type="time"
+        name="time"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="eco_seat">Economy Seat</label>
+<input type="number"
+        name="eco_seat"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="eco_price">Economy Price</label>
+<input type="number"
+        name="eco_price"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="preeco_seat">Premium Economy Seat</label>
+<input type="number"
+        name="preeco_seat"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="preeco_price">Premium Economy Price</label>
+<input type="number"
+        name="preeco_price"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="first_seat">Fisrt Class Seat</label>
+<input type="number"
+        name="first_seat"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="first_price">Fisrt Class Price</label>
+<input type="number"
+        name="first_price"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="bus_seat">Business Class Seat</label>
+<input type="number"
+        name="bus_seat"
+        required/>
+</div>
+<div class="user-input-box">
+    <label for="bus_price">Business Class Price</label>
+<input type="number"
+        name="bus_price"
+        required/>
+</div>
+               <!-- Submit button for the form -->
+                  <td><button class="btn btn-success" name="confirm" style=" display: block; width: 100%; position: relative; left: 450px;
+                    margin-top: 70px; font-size: 16px; padding: 10px; border:none; cursor: pointer; border-radius: 5px; color: rgb(238, 238, 238);
+                    background: rgba(22, 62, 222, 0.7);">  Confirm</button></td>
+                     </tr>
+            </table> 
+            
+            </div> 
+        </div>
+    </div>
+    <!-- Ionicons script for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
