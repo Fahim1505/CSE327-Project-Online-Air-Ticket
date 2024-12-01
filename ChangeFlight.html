@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Flight</title>
+    <link rel="stylesheet" href="ChangeFlight.css">
+    <script src="https://kit.fontawesome.com/cea56aa947.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="side_container">
+            <h2>Air Ticket Booking</h2>
+            <div class="image">
+                <img src="Blank_Image.png" alt="image">
+            </div>
+            
+            <ul>
+                <li><a href="Dashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="Schedule.html"><i class="fa-regular fa-clock time-icon"></i> Schedule</a></li>
+                <li><a href="Booking.html"><i class="fa-solid fa-calendar-check"></i> Booking</a></li>
+                <li><a href="CancelBooking.html"><i class="fa-solid fa-xmark"></i> Cancel Booking</a></li>
+                <li><a href="View.html"><i class="fa-solid fa-eye"></i> View</a></li>
+                <li><a href="Flight.html"><i class="fa-solid fa-plane"></i> Flight</a></li> 
+                <li><a href="ChangeFlight.html"><i class="fa-solid fa-plane"></i> Change Flight</a></li>
+                <li><a href="DeleteFlight.html"><i class="fa-solid fa-trash"></i> Delete Flight</a></li>
+
+            </ul> 
+            <div class="social_media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="header">
+                <div class="search_container">
+                    <form method="post" action="">
+                        <input type="search" placeholder="Search..." name="">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="logout_container">
+                    <a href="#"><span class="logout">Logout</span></a>
+                </div>
+            </div> 
+            </div> 
+            <div class="inner_container">
+                <div class="inner_header">
+                    <p>Change a Flight</p>
+                </div>
+                <form action="booking1.php" method="POST">
+                    <table>
+                        <div class="user-input-box">
+                            <label for="flightno">Previous Flight Number</label>
+                        <input type="text"
+                                id="flightno"
+                                name="flightno"
+                                required/>
+                      </div>
+
+                      <div class="user-input-box">
+                        <label for="quantity">Previous Quantity</label>
+                    <input type="text"
+                            id="quantity"
+                            name="quantity"
+                            required/>
+                      </div>
+
+                      <div class="user-input-box">
+                        <label for="class">CLASS </label>
+                        <select id="class" name="class"style="padding: 5px 15px; border-radius: 10px; font-size:15px " required>
+                            <option value="selectoption">Select Class</option>
+                            <option value="Economy">Economy</option>
+                            <option value="Premium economy">Premium Economy</option>
+                            <option value="First class">First Class</option>
+                            <option value="Business">Business Class</option>
+                        </select>
+                    </div>
+
+                      <div class="user-input-box2">
+                        <label for="flightno">New Flight Number</label>
+                    <input type="text"
+                            id="flightno"
+                            name="flightno"
+                            required/>
+                      </div>
+
+                      <div class="user-input-box2">
+                        <label for="quantity">New Quantity</label>
+                    <input type="text"
+                            id="quantity"
+                            name="quantity"
+                            required/>
+                      </div>
+
+                            <div class="user-input-box2">
+                                <label for="class">NEW CLASS </label>
+                                <select id="class" name="class"style="padding: 5px 15px; border-radius: 10px; font-size:15px " required>
+                                    <option value="selectoption">Select Class</option>
+                                    <option value="Economy">Economy</option>
+                                    <option value="Premium economy">Premium Economy</option>
+                                    <option value="First class">First Class</option>
+                                    <option value="Business">Business Class</option>
+                                </select>
+                            </div>
+                        <tr>
+                            <td>
+                                <button class="btn btn-success" name="confirm" style=" display: block; width: 100%; position: relative; left: -220px;
+                                margin-top: 50px; font-size: 16px; padding: 10px; border:none; cursor: pointer; border-radius: 5px; color: rgb(238, 238, 238);
+                                background: rgba(22, 62, 222, 0.7);"> Change Flight</button>
+                                </td>
+                        </tr>
+                    </table>
+                </form>
+            </div> 
+    </div> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </div>
+</body>
+</html>
