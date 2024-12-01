@@ -1,0 +1,170 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f7fc;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.header h1 {
+    font-size: 36px;
+}
+
+/* Booking Form */
+.booking-form {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.booking-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+button.btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+button.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Flight Results */
+.flight-results {
+    margin-top: 30px;
+}
+.flight-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.flight-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.flight-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.flight-time {
+    font-size: 18px;
+    color: #777;
+}
+.flight-details p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+.btn-book {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    display: inline-block;
+}
+.btn-book:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #007bff;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;  /* Reduced padding from the top to fit the modal properly */
+    overflow-y: auto;   /* Ensures the modal is scrollable if content overflows */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%; /* Reduced to give space on mobile */
+    max-width: 600px;
+    overflow-y: auto; /* This allows scrolling if content is larger than the modal */
+    height: auto;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* For smaller screens, make sure modal is well adjusted */
+    .modal-content {
+        width: 90%; /* Allow more space for the modal content on smaller screens */
+        max-width: 90%;
+    }
+    .modal {
+        padding-top: 10px; /* Reduced padding from the top */
+    }
+}
