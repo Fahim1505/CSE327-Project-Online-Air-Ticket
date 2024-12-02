@@ -1,108 +1,169 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Dec 02, 2024 at 06:11 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `air_ticket_view`
+-- Database: `online air ticket`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bookings`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `bookings` (
-  `booking_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `flight_id` int(11) NOT NULL,
-  `booking_date` timestamp NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `admin` (
+  `admin` varchar(50) NOT NULL,
+  `pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin`, `pass`) VALUES
+('admin1', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `username` varchar(50) NOT NULL,
+  `flightno` varchar(50) NOT NULL,
+  `class` varchar(50) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `bdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `flight`
 --
 
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone_no` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `flight` (
+  `flightno` varchar(50) NOT NULL,
+  `deperture` text NOT NULL,
+  `destination` text NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `flight`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `phone_no`, `created_at`) VALUES
-(1, 'John', 'Doe', 'john.doe@example.com', '123-456-7890', '2024-12-02 05:10:22'),
-(2, 'Jane', 'Smith', 'jane.smith@example.com', '234-567-8901', '2024-12-02 05:10:22'),
-(3, 'Sam', 'Wilson', 'sam.wilson@example.com', '345-678-9012', '2024-12-02 05:10:22'),
-(4, 'Emily', 'Davis', 'emily.davis@example.com', '456-789-0123', '2024-12-02 05:10:22'),
-(5, 'Michael', 'Brown', 'michael.brown@example.com', '567-890-1234', '2024-12-02 05:10:22');
+INSERT INTO `flight` (`flightno`, `deperture`, `destination`, `date`, `time`) VALUES
+('555', 'Dhaka', 'sylhet', '2024-11-11', '21:42:00');
+INSERT INTO `flight` (`flightno`, `deperture`, `destination`, `date`, `time`) VALUES
+('556', 'Chittagong', 'Dhaka', '2024-11-10', '10:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seat`
+--
+
+CREATE TABLE `seat` (
+  `flightno` varchar(50) NOT NULL,
+  `eco_seat` int(11) NOT NULL,
+  `eco_price` int(11) NOT NULL,
+  `preeco_seat` int(11) NOT NULL,
+  `preeco_price` int(11) NOT NULL,
+  `first_seat` int(11) NOT NULL,
+  `first_price` int(11) NOT NULL,
+  `bus_seat` int(11) NOT NULL,
+  `bus_price` int(11) NOT NULL,
+  `cur_eco` int(11) NOT NULL,
+  `cur_preco` int(11) NOT NULL,
+  `cur_first` int(11) NOT NULL,
+  `cur_bus` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `seat`
+--
+
+INSERT INTO `seat` (`flightno`, `eco_seat`, `eco_price`, `preeco_seat`, `preeco_price`, `first_seat`, `first_price`, `bus_seat`, `bus_price`, `cur_eco`, `cur_preco`, `cur_first`, `cur_bus`) VALUES
+('555', 150, 10000, 150, 10000, 150, 10000, 150, 10000, 150, 150, 150, 150);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `dob` date NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `passno` varchar(50) NOT NULL,
+  `pno` int(11) NOT NULL,
+  `sex` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`fname`, `lname`, `dob`, `email`, `passno`, `pno`, `sex`, `username`, `password`) VALUES
+('fahim', 'muntasir', '2024-11-20', 'fahimsoumyo1505@gmail.com', '123456', 0130000000, 'M', 'fahim07', '123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `bookings`
+-- Indexes for table `admin`
 --
-ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `user_id` (`user_id`);
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `booking`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`email`);
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`username`,`flightno`,`class`),
+  ADD KEY `flightno` (`flightno`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `flight`
 --
+ALTER TABLE `flight`
+  ADD PRIMARY KEY (`flightno`);
 
 --
--- AUTO_INCREMENT for table `bookings`
+-- Indexes for table `seat`
 --
-ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `seat`
+  ADD PRIMARY KEY (`flightno`);
 
 --
--- AUTO_INCREMENT for table `users`
+-- Indexes for table `user`
 --
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `bookings`
+-- Constraints for table `booking`
 --
-ALTER TABLE `bookings`
-  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+ALTER TABLE `booking`
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`flightno`) REFERENCES `flight` (`flightno`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `seat`
+--
+ALTER TABLE `seat`
+  ADD CONSTRAINT `seat_ibfk_1` FOREIGN KEY (`flightno`) REFERENCES `flight` (`flightno`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
